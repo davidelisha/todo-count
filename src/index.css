@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+/* NAV */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  padding-left: 18vw;
+  padding-right: 18vw;
+}
+
+.title {
+  color: bisque;
+  font-weight: 600;
+}
+
+.orange {
+  color: orangered;
+}
+
+.exit {
+  color: antiquewhite;
+}
+
+/* TODO COUNT */
+.count-todo-container {
+  color: bisque;
+  display: flex;
+  justify-content: center;
+}
+
+.todo-wrap {
+  display: flex;
+  border: solid;
+  border-color: antiquewhite;
+  border-radius: 15px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+  margin-bottom: 2em;
+}
+
+.todo-done {
+  padding-right: 2em;
+  padding-top: 2em;
+}
+
+.todo-counter {
+  padding: 1em;
+  background-color: tomato;
+  border-radius: 55px;
+  display: flex;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.done {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.encouragement {
+  font-weight: lighter;
+}
+
+/* TODO */
+.todo {
+  display: flex;
+}
+
+.todo-type {
+  padding: 1em;
+  border-radius: 15px;
+  background-color: rgb(37, 36, 36);
+  color: grey;
+}
+
+.new-item {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-type {
+  width: 20vw;
+}
+
+.add-todo {
+  background-color: tomato;
+  width: 3.4em;
+  border-radius: 30px;
+  margin-left: 1em;
+}
+
+.check {
+  margin-right: 8px;
+  border-radius: 40px;
+  background-color: tomato;
+}
+
+.list {
+  margin-left: 35vw;
+  margin-right: 35vw;
+}
+
+.todo-container {
+  display: flex;
+  background-color: rgb(37, 36, 36);
+  color: antiquewhite;
+  margin: 1em;
+  padding: 1em;
+  justify-content: space-between;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  align-items: center;
+}
+
+.todo-completed-container {
+  display: flex;
+  background-color: rgb(217, 240, 183);
+  opacity: 1;
+  margin: 1em;
+  padding: 0.6em;
+  justify-content: space-between;
+  border-radius: 10px;
+  /* background: rgb(241, 241, 241); */
+  border: 1px solid green;
+  cursor: pointer;
+  outline: none;
+  /* width: 50vw; */
+  align-items: center;
+}
+
+.btn-delete {
+  color: grey;
+}
+
+.btn-edit {
+  color: grey;
+  margin-right: 8px;
+}
+
+.btn-complete-edit {
+  color: green;
+  margin-right: 8px;
+}
+
+.btn-complete {
+  padding: 3px;
+  background-color: beige;
+  color: grey;
+  border-radius: 7px;
+}
+
+.btn-complete-delete {
+  color: green;
+}
+
+.buttons {
+  display: flex;
+}
+
+form {
+  display: flex;
+}
+
+.completed-h1 {
+  font-size: 1.3em;
+  color: gray;
+  font-weight: bold;
+  padding: 3px;
+  padding-left: 1em;
+}
+/* Todo Count */
