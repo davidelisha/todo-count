@@ -1,16 +1,11 @@
 import "./App.css";
-import Body from "./components/Body";
-import Nav from "./components/Nav";
+import TodoApp from "./components/TodoApp";
 // import Todo from "./components/Todo";
 
 function App() {
   return (
     <>
-      <div className="app">
-        <Nav />
-        {/* <Todo /> */}
-        <Body />
-      </div>
+      <TodoApp />
     </>
   );
 }
