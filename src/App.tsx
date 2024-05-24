@@ -1,4 +1,5 @@
 import "./App.css";
+import { AuthProvider } from "./components/AuthContext";
 import Body from "./components/Body";
 import Nav from "./components/Nav";
 // import Todo from "./components/Todo";
@@ -6,11 +7,12 @@ import Nav from "./components/Nav";
 function App() {
   return (
     <>
-      <div className="app">
-        <Nav />
-        {/* <Todo /> */}
-        <Body />
-      </div>
+      <AuthProvider>
+        <div className="app">
+          <Nav />
+          <Body />
+        </div>
+      </AuthProvider>
     </>
   );
 }
