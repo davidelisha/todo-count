@@ -8,6 +8,7 @@ interface NavProps {
 }
 
 const Nav: React.FC<NavProps> = ({ user, onLogout }) => {
+  console.log(user);
   return (
     <nav>
       <div className="nav-container">
@@ -17,7 +18,7 @@ const Nav: React.FC<NavProps> = ({ user, onLogout }) => {
         <div className="nav-flex">
           {user && (
             <div className="exit" onClick={() => onLogout(user.email)}>
-              <FontAwesomeIcon icon={faArrowRightFromBracket} />
+              <FontAwesomeIcon icon={faArrowRightFromBracket} /> logout
             </div>
           )}
         </div>
