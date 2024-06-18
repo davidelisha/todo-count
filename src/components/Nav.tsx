@@ -8,7 +8,6 @@ interface NavProps {
 }
 
 const Nav: React.FC<NavProps> = ({ user, onLogout }) => {
-  console.log(user);
   return (
     <nav>
       <div className="nav-container">
