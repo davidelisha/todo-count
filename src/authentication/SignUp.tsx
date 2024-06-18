@@ -1,54 +1,53 @@
 import React, { useState } from "react";
 import { User } from "../types/app.types";
 
-interface LoginProps {
-  onLogin: (user: User) => void;
+interface SignUpProps {
+  onSignUp: (user: User) => void;
 }
-
-const Login: React.FC<LoginProps> = ({ onLogin }) => {
+const SignUp: React.FC<SignUpProps> = ({ onSignUp }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const storedUser: User = JSON.parse(localStorage.getItem(email) ?? "");
-    if (storedUser?.password === password) {
-      onLogin({
+    if (localStorage.getItem(email)) {
+      alert("email already exists");
+    } else {
+      localStorage.setItem(email, JSON.stringify({ password, todos: [] }));
+      onSignUp({
         email,
         password,
-        todos: storedUser.todos,
+        todos: [],
       });
-    } else {
-      alert("Invalid email or password");
     }
   };
 
   return (
     <div>
-      <div className="login">Login</div>
-      <form className="login-form" onSubmit={handleSubmit}>
+      <div className="sign-up">Sign Up</div>
+      <form className="sign-up-form" onSubmit={handleSubmit}>
         <input
-          className="login-input"
+          className="sign-up-input"
           type="email"
-          placeholder="Email"
+          placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
         <input
-          className="login-input"
+          className="sign-up-input"
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button className="login-btn" type="submit">
-          Login
+        <button className="sign-up-btn" type="submit">
+          Sign Up
         </button>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;

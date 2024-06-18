@@ -3,20 +3,39 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTrashCan,
   faPenToSquare,
-  faPlus,
+  // faPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import { TodoItem } from "../types/app.types";
 
-const Todo = () => {
+interface TodoProps {
+  email: string;
+}
+
+const Todo: React.FC<TodoProps> = () => {
   const [newItem, setNewItem] = useState("");
-  const [todos, setTodos] = useState([]);
-  const [editingTodoId, setEditingTodoId] = useState(null);
+  const [todos, setTodos] = useState<TodoItem[]>([]);
+  const [editingTodoId, setEditingTodoId] = useState<string>();
   const [editingTodoText, setEditingTodoText] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    console.log(todos);
-  }, [todos]);
+    const user = JSON.parse(localStorage.getItem("user")!);
+    if (user) {
+      const storedEmail = user.email;
+      setEmail(storedEmail);
+      const localValue = localStorage.getItem(`Items_${storedEmail}`);
+      if (!localValue) return;
 
-  const handleSubmit = (e) => {
+      setTodos(JSON.parse(localValue));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(`Items_${email}`, JSON.stringify(todos));
+    console.log(todos);
+  }, [todos, email]);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setTodos((currentTodos) => {
@@ -28,31 +47,31 @@ const Todo = () => {
     setNewItem("");
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = (id: string) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const handleEdit = (id) => {
-    const todo = todos.find((todo) => todo.id === id);
+  const handleEdit = (id: string) => {
+    const todo = todos.find((todo) => todo.id === id)!;
     setEditingTodoId(id);
     setEditingTodoText(todo.title);
   };
 
-  const handleEditText = (e) => {
-    setEditingTodoText(e.target.value);
+  const handleEditText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEditingTodoText(e.currentTarget.value);
   };
 
-  const updateTodo = (id) => {
+  const updateTodo = (id: string) => {
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, title: editingTodoText } : todo
       )
     );
-    setEditingTodoId(null);
+    setEditingTodoId(undefined);
     setEditingTodoText("");
   };
 
-  const checkTodo = (id, completed) => {
+  const checkTodo = (id: string, completed: boolean) => {
     setTodos(
       todos.map((todo) => (todo.id === id ? { ...todo, completed } : todo))
     );
@@ -66,15 +85,10 @@ const Todo = () => {
     <>
       <div className="count-todo-container">
         <div className="todo-wrap">
-          <div className="todo-done">
+          {/* <div className="todo-done">
             <div className="done">Todo Done</div>
             <div className="encouragement">Keep it up</div>
-          </div>
-          <div className="todo-counter">
-            <p>{countTodos()}</p>
-            <p>/</p>
-            <p>{countCompletedTodos()}</p>
-          </div>
+          </div> */}
         </div>
       </div>
       <form onSubmit={handleSubmit} className="new-item">
@@ -88,9 +102,14 @@ const Todo = () => {
             placeholder="write your next task"
           />
         </div>
-        <button className="add-todo">
+        <div className="todo-counter">
+          <p>{countTodos()}</p>
+          <p>/</p>
+          <p>{countCompletedTodos()}</p>
+        </div>
+        {/* <button className="add-todo">
           <FontAwesomeIcon icon={faPlus} />
-        </button>
+        </button> */}
       </form>
       <ul className="list">
         {todos
@@ -150,9 +169,9 @@ const Todo = () => {
                   {todo.title}
                 </div>
                 <div className="buttons">
-                  <div className="btn-complete-edit">
+                  {/* <div className="btn-complete-edit">
                     <FontAwesomeIcon icon={faPenToSquare} />
-                  </div>
+                  </div> */}
                   <div
                     onClick={() => handleDelete(todo.id)}
                     className="btn-complete-delete"

@@ -4,8 +4,8 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.app {
-  background-color: black;
+.black {
+  background-color: rgb(222, 222, 222);
   width: 100vw;
   height: 100vh;
 }
@@ -20,7 +20,7 @@
 }
 
 .title {
-  color: bisque;
+  color: skyblue;
   font-weight: 600;
 }
 
@@ -29,17 +29,38 @@
 }
 
 .exit {
-  color: antiquewhite;
+  /* color: antiquewhite; */
+}
+
+/* BODY */
+.body-container {
+  margin-top: 3em;
+}
+
+.body-text {
+  color: black;
+  font-size: 3em;
+  margin-left: 32vw;
+}
+
+.date {
+  color: black;
+  font-size: 3em;
+  margin-left: 32vw;
+}
+
+.karan {
+  color: skyblue;
 }
 
 /* TODO COUNT */
-.count-todo-container {
+/* .count-todo-container {
   color: bisque;
   display: flex;
   justify-content: center;
-}
+} */
 
-.todo-wrap {
+/* .todo-wrap {
   display: flex;
   border: solid;
   border-color: antiquewhite;
@@ -49,30 +70,32 @@
   padding-top: 6vh;
   padding-bottom: 6vh;
   margin-bottom: 2em;
-}
+} */
 
-.todo-done {
+/* .todo-done {
   padding-right: 2em;
   padding-top: 2em;
-}
+} */
 
 .todo-counter {
-  padding: 1em;
-  background-color: tomato;
-  border-radius: 55px;
+  padding: 1.2em;
+  /* margin-left: 1em; */
+  background-color: grey;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
   display: flex;
-  font-size: 2em;
+  font-size: 1.3em;
   font-weight: 600;
 }
 
-.done {
+/* .done {
   font-size: 1.3em;
   font-weight: 600;
 }
 
 .encouragement {
   font-weight: lighter;
-}
+} */
 
 /* TODO */
 .todo {
@@ -80,19 +103,24 @@
 }
 
 .todo-type {
-  padding: 1em;
-  border-radius: 15px;
-  background-color: rgb(37, 36, 36);
+  padding: 1.3em;
+  font-size: 1.3em;
+  border: 0;
+  /* border-radius: 15px; */
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  /* background-color: rgb(37, 36, 36); */
   color: grey;
 }
 
 .new-item {
   display: flex;
   justify-content: center;
+  margin-top: 3em;
 }
 
 .todo-type {
-  width: 20vw;
+  width: 30vw;
 }
 
 .add-todo {
@@ -115,10 +143,12 @@
 
 .todo-container {
   display: flex;
-  background-color: rgb(37, 36, 36);
-  color: antiquewhite;
+  /* background-color: rgb(37, 36, 36); */
+  background-color: #fff;
+  color: grey;
   margin: 1em;
-  padding: 1em;
+  padding: 1.2em;
+  font-size: 1.2em;
   justify-content: space-between;
   border-radius: 10px;
   cursor: pointer;
@@ -182,4 +212,55 @@ form {
   padding: 3px;
   padding-left: 1em;
 }
-/* Todo Count */
+
+/* Authentication */
+/* Login */
+.login {
+  color: bisque;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+}
+
+.login-input {
+  padding: 1em;
+}
+
+.login-btn {
+  padding: 1em;
+  color: bisque;
+  background-color: tomato;
+}
+
+/* Sign-Up */
+.sign-up {
+  color: bisque;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.sign-up-form {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-up-input {
+  padding: 1em;
+  color: bisque;
+}
+
+.sign-up-btn {
+  padding: 1em;
+  color: bisque;
+  background-color: tomato;
+}
