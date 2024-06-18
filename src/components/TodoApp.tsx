@@ -28,6 +28,7 @@ const TodoApp: React.FC = () => {
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(undefined);
+    navigate("/login");
   };
 
   return (
