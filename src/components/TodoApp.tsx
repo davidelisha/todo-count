@@ -5,6 +5,7 @@ import Nav from "./Nav";
 import Login from "../authentication//Login";
 import SignUp from "../authentication//SignUp";
 import { User } from "../types/app.types";
+import ProtectedRoute from "../authentication/ProtectedRoute";
 
 const TodoApp: React.FC = () => {
   const [user, setUser] = useState<User>();
@@ -36,7 +37,15 @@ const TodoApp: React.FC = () => {
       <Nav user={user} onLogout={handleLogout} />
 
       <Routes>
-        <Route path="" element={<Body />} />
+        <Route
+          path=""
+          element={
+            <ProtectedRoute>
+              <Body />
+            </ProtectedRoute>
+          }
+        />
+
         <Route
           path="Login"
           element={<Login onLogin={handleAuthentication} />}
