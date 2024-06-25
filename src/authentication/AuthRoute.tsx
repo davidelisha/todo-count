@@ -6,7 +6,7 @@ interface AuthRouteProps {
 }
 
 /**
- * This component prevents access to the home page if the user is not logged in
+ * This component redirects to the home page if the user is logged in
  */
 const AuthRoute: React.FC<AuthRouteProps> = ({ children }) => {
   if (localStorage.getItem("user")) {
