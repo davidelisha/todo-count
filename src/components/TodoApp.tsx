@@ -6,6 +6,7 @@ import Login from "../authentication//Login";
 import SignUp from "../authentication//SignUp";
 import { User } from "../types/app.types";
 import ProtectedRoute from "../authentication/ProtectedRoute";
+import AuthRoute from "../authentication/AuthRoute";
 
 const TodoApp: React.FC = () => {
   const [user, setUser] = useState<User>();
@@ -48,11 +49,19 @@ const TodoApp: React.FC = () => {
 
         <Route
           path="Login"
-          element={<Login onLogin={handleAuthentication} />}
+          element={
+            <AuthRoute>
+              <Login onLogin={handleAuthentication} />
+            </AuthRoute>
+          }
         />
         <Route
           path="SignUp"
-          element={<SignUp onSignUp={handleAuthentication} />}
+          element={
+            <AuthRoute>
+              <SignUp onSignUp={handleAuthentication} />
+            </AuthRoute>
+          }
         />
       </Routes>
     </div>
