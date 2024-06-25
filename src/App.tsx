@@ -4,11 +4,9 @@ import TodoApp from "./components/TodoApp";
 
 const App = () => {
   return (
-    <>
-      <BrowserRouter>
-        <TodoApp />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <TodoApp />
+    </BrowserRouter>
   );
 };
 
