@@ -27,25 +27,31 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     <div>
       <div className="login">Login</div>
       <form className="login-form" onSubmit={handleSubmit}>
-        <input
-          className="login-input"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          className="login-input"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button className="login-btn" type="submit">
-          Login
-        </button>
+        <div className="email-input">
+          <input
+            className="login-input"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="password-input">
+          <input
+            className="login-input"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <div className="btn-container">
+          <button className="login-btn" type="submit">
+            Login
+          </button>
+        </div>
       </form>
     </div>
   );

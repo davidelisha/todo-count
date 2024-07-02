@@ -26,25 +26,31 @@ const SignUp: React.FC<SignUpProps> = ({ onSignUp }) => {
     <div>
       <div className="sign-up">Sign Up</div>
       <form className="sign-up-form" onSubmit={handleSubmit}>
-        <input
-          className="sign-up-input"
-          type="email"
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          className="sign-up-input"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button className="sign-up-btn" type="submit">
-          Sign Up
-        </button>
+        <div className="email-input">
+          <input
+            className="sign-up-input"
+            type="email"
+            placeholder="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="password-input">
+          <input
+            className="sign-up-input"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <div className="btn-container">
+          <button className="sign-up-btn" type="submit">
+            Sign Up
+          </button>
+        </div>
       </form>
     </div>
   );

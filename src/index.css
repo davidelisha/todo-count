@@ -5,7 +5,7 @@
 }
 
 .black {
-  background-color: rgb(222, 222, 222);
+  background-color: #eee;
   width: 100vw;
   height: 100vh;
 }
@@ -202,7 +202,7 @@
 }
 
 form {
-  display: flex;
+  /* display: flex; */
 }
 
 .completed-h1 {
@@ -216,51 +216,70 @@ form {
 /* Authentication */
 /* Login */
 .login {
-  color: bisque;
+  color: black;
   display: flex;
   justify-content: center;
-  font-size: 1.5em;
-  margin-top: 2em;
+  font-size: 3em;
+  margin-top: 1.5em;
   margin-bottom: 1em;
 }
 
-.login-form {
+.email-input {
   display: flex;
   justify-content: center;
 }
 
+.password-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+
 .login-input {
-  padding: 1em;
+  padding: 1.5em;
+  width: 30vw;
+  border-radius: 10px;
+  /* border: none; */
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
 }
 
 .login-btn {
-  padding: 1em;
-  color: bisque;
-  background-color: tomato;
+  padding: 1.5em;
+  color: #eee;
+  background-color: black;
+  margin-top: 3em;
+  border-radius: 10px;
+  width: 32vw;
 }
 
 /* Sign-Up */
 .sign-up {
-  color: bisque;
+  color: black;
   display: flex;
   justify-content: center;
-  font-size: 1.5em;
-  margin-top: 2em;
+  font-size: 3em;
+  margin-top: 1.5em;
   margin-bottom: 1em;
 }
 
 .sign-up-form {
-  display: flex;
-  justify-content: center;
 }
 
 .sign-up-input {
-  padding: 1em;
-  color: bisque;
+  padding: 1.5em;
+  width: 30vw;
+  border-radius: 10px;
 }
 
 .sign-up-btn {
-  padding: 1em;
-  color: bisque;
-  background-color: tomato;
+  padding: 1.5em;
+  color: #eee;
+  background-color: black;
+  margin-top: 3em;
+  border-radius: 10px;
+  width: 32vw;
 }
