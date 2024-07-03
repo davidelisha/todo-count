@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTrashCan,
-  faPenToSquare,
-  // faPlus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { TodoItem } from "../types/app.types";
 
 interface TodoProps {
@@ -83,14 +79,7 @@ const Todo: React.FC<TodoProps> = () => {
 
   return (
     <>
-      <div className="count-todo-container">
-        <div className="todo-wrap">
-          {/* <div className="todo-done">
-            <div className="done">Todo Done</div>
-            <div className="encouragement">Keep it up</div>
-          </div> */}
-        </div>
-      </div>
+      <div className="count-todo-container"></div>
       <form onSubmit={handleSubmit} className="new-item">
         <div className="form-row">
           <input
@@ -107,9 +96,6 @@ const Todo: React.FC<TodoProps> = () => {
           <p>/</p>
           <p>{countCompletedTodos()}</p>
         </div>
-        {/* <button className="add-todo">
-          <FontAwesomeIcon icon={faPlus} />
-        </button> */}
       </form>
       <ul className="list">
         {todos
@@ -169,9 +155,6 @@ const Todo: React.FC<TodoProps> = () => {
                   {todo.title}
                 </div>
                 <div className="buttons">
-                  {/* <div className="btn-complete-edit">
-                    <FontAwesomeIcon icon={faPenToSquare} />
-                  </div> */}
                   <div
                     onClick={() => handleDelete(todo.id)}
                     className="btn-complete-delete"

@@ -5,7 +5,7 @@
 }
 
 .black {
-  background-color: rgb(222, 222, 222);
+  background-color: #eee;
   width: 100vw;
   height: 100vh;
 }
@@ -26,10 +26,6 @@
 
 .orange {
   color: orangered;
-}
-
-.exit {
-  /* color: antiquewhite; */
 }
 
 /* BODY */
@@ -53,30 +49,6 @@
   color: skyblue;
 }
 
-/* TODO COUNT */
-/* .count-todo-container {
-  color: bisque;
-  display: flex;
-  justify-content: center;
-} */
-
-/* .todo-wrap {
-  display: flex;
-  border: solid;
-  border-color: antiquewhite;
-  border-radius: 15px;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-top: 6vh;
-  padding-bottom: 6vh;
-  margin-bottom: 2em;
-} */
-
-/* .todo-done {
-  padding-right: 2em;
-  padding-top: 2em;
-} */
-
 .todo-counter {
   padding: 1.2em;
   /* margin-left: 1em; */
@@ -88,15 +60,6 @@
   font-weight: 600;
 }
 
-/* .done {
-  font-size: 1.3em;
-  font-weight: 600;
-}
-
-.encouragement {
-  font-weight: lighter;
-} */
-
 /* TODO */
 .todo {
   display: flex;
@@ -106,10 +69,8 @@
   padding: 1.3em;
   font-size: 1.3em;
   border: 0;
-  /* border-radius: 15px; */
   border-top-left-radius: 18px;
   border-bottom-left-radius: 18px;
-  /* background-color: rgb(37, 36, 36); */
   color: grey;
 }
 
@@ -143,7 +104,6 @@
 
 .todo-container {
   display: flex;
-  /* background-color: rgb(37, 36, 36); */
   background-color: #fff;
   color: grey;
   margin: 1em;
@@ -164,11 +124,9 @@
   padding: 0.6em;
   justify-content: space-between;
   border-radius: 10px;
-  /* background: rgb(241, 241, 241); */
   border: 1px solid green;
   cursor: pointer;
   outline: none;
-  /* width: 50vw; */
   align-items: center;
 }
 
@@ -201,10 +159,6 @@
   display: flex;
 }
 
-form {
-  display: flex;
-}
-
 .completed-h1 {
   font-size: 1.3em;
   color: gray;
@@ -213,54 +167,70 @@ form {
   padding-left: 1em;
 }
 
-/* Authentication */
+/* AUTHENTICATION */
+
 /* Login */
 .login {
-  color: bisque;
+  color: black;
   display: flex;
   justify-content: center;
-  font-size: 1.5em;
-  margin-top: 2em;
+  font-size: 3em;
+  margin-top: 1.5em;
   margin-bottom: 1em;
 }
 
-.login-form {
+.email-input {
   display: flex;
   justify-content: center;
 }
 
+.password-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+
 .login-input {
-  padding: 1em;
+  padding: 1.5em;
+  width: 30vw;
+  border-radius: 10px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
 }
 
 .login-btn {
-  padding: 1em;
-  color: bisque;
-  background-color: tomato;
+  padding: 1.5em;
+  color: #eee;
+  background-color: black;
+  margin-top: 3em;
+  border-radius: 10px;
+  width: 32vw;
 }
 
 /* Sign-Up */
 .sign-up {
-  color: bisque;
+  color: black;
   display: flex;
   justify-content: center;
-  font-size: 1.5em;
-  margin-top: 2em;
+  font-size: 3em;
+  margin-top: 1.5em;
   margin-bottom: 1em;
 }
 
-.sign-up-form {
-  display: flex;
-  justify-content: center;
-}
-
 .sign-up-input {
-  padding: 1em;
-  color: bisque;
+  padding: 1.5em;
+  width: 30vw;
+  border-radius: 10px;
 }
 
 .sign-up-btn {
-  padding: 1em;
-  color: bisque;
-  background-color: tomato;
+  padding: 1.5em;
+  color: #eee;
+  background-color: black;
+  margin-top: 3em;
+  border-radius: 10px;
+  width: 32vw;
 }
