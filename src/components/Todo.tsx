@@ -37,7 +37,12 @@ const Todo: React.FC<TodoProps> = () => {
     setTodos((currentTodos) => {
       return [
         ...currentTodos,
-        { id: crypto.randomUUID(), title: newItem, completed: false },
+        {
+          id: crypto.randomUUID(),
+          title: newItem,
+          completed: false,
+          date: Date.now(),
+        },
       ];
     });
     setNewItem("");
@@ -77,11 +82,6 @@ const Todo: React.FC<TodoProps> = () => {
   const countCompletedTodos = () =>
     todos.filter((todo) => todo.completed).length;
 
-  const currentDate = new Date().toLocaleDateString("en-EN", {
-    month: "long",
-    day: "numeric",
-  });
-
   return (
     <>
       <div className="count-todo-container"></div>
@@ -108,39 +108,51 @@ const Todo: React.FC<TodoProps> = () => {
           .map((todo) => {
             return (
               <div className="todo-container" key={todo.id}>
-                <div className="todo">
-                  <input
-                    className="check"
-                    type="checkbox"
-                    checked={todo.completed}
-                    onChange={(e) => checkTodo(todo.id, e.target.checked)}
-                  />
-                  {editingTodoId && editingTodoId === todo.id ? (
+                <div className="wrap">
+                  <div className="todo">
                     <input
-                      type="text"
-                      placeholder="Edit todo"
-                      value={editingTodoText}
-                      onChange={handleEditText}
-                      onKeyDown={(e) =>
-                        e.key === "Enter" && updateTodo(todo.id)
-                      }
+                      className="check"
+                      type="checkbox"
+                      checked={todo.completed}
+                      onChange={(e) => checkTodo(todo.id, e.target.checked)}
                     />
-                  ) : (
-                    <div className="updates">{todo.title}</div>
-                  )}
+                    {editingTodoId && editingTodoId === todo.id ? (
+                      <input
+                        type="text"
+                        placeholder="Edit todo"
+                        value={editingTodoText}
+                        onChange={handleEditText}
+                        onKeyDown={(e) =>
+                          e.key === "Enter" && updateTodo(todo.id)
+                        }
+                      />
+                    ) : (
+                      <div className="updates">{todo.title}</div>
+                    )}
+                  </div>
+                  {/* <div className="" */}
+                  <div className="buttons">
+                    <div
+                      onClick={() => handleEdit(todo.id)}
+                      className="btn-edit"
+                    >
+                      <FontAwesomeIcon icon={faPenToSquare} />
+                    </div>
+                    <div
+                      onClick={() => handleDelete(todo.id)}
+                      className="btn-delete"
+                    >
+                      <FontAwesomeIcon icon={faTrashCan} />
+                    </div>
+                  </div>
                 </div>
-                {/* <div className="" */}
-                <div className="buttons">
-                  <div onClick={() => handleEdit(todo.id)} className="btn-edit">
-                    <FontAwesomeIcon icon={faPenToSquare} />
-                  </div>
-                  <div
-                    onClick={() => handleDelete(todo.id)}
-                    className="btn-delete"
-                  >
-                    <FontAwesomeIcon icon={faTrashCan} />
-                  </div>
-                  <div className="todo-date">{currentDate}</div>
+                <div className="todo-date">
+                  {todo.date
+                    ? new Date(todo.date).toLocaleDateString("en-EN", {
+                        month: "long",
+                        day: "numeric",
+                      })
+                    : "N/A"}
                 </div>
               </div>
             );
@@ -152,22 +164,32 @@ const Todo: React.FC<TodoProps> = () => {
           .map((todo) => {
             return (
               <div className="todo-completed-container" key={todo.id}>
-                <div className="todo">
-                  <input
-                    className="check"
-                    type="checkbox"
-                    checked={todo.completed}
-                    onChange={(e) => checkTodo(todo.id, e.target.checked)}
-                  />
-                  {todo.title}
-                </div>
-                <div className="buttons">
-                  <div
-                    onClick={() => handleDelete(todo.id)}
-                    className="btn-complete-delete"
-                  >
-                    <FontAwesomeIcon icon={faTrashCan} />
+                <div className="wrapp">
+                  <div className="todo">
+                    <input
+                      className="check"
+                      type="checkbox"
+                      checked={todo.completed}
+                      onChange={(e) => checkTodo(todo.id, e.target.checked)}
+                    />
+                    {todo.title}
                   </div>
+                  <div className="buttons">
+                    <div
+                      onClick={() => handleDelete(todo.id)}
+                      className="btn-complete-delete"
+                    >
+                      <FontAwesomeIcon icon={faTrashCan} />
+                    </div>
+                  </div>
+                </div>
+                <div className="todo-date">
+                  {todo.date
+                    ? new Date(todo.date).toLocaleDateString("en-EN", {
+                        month: "long",
+                        day: "numeric",
+                      })
+                    : "N/A"}
                 </div>
               </div>
             );

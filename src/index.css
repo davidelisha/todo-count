@@ -51,7 +51,7 @@
 
 .todo-counter {
   padding: 1.2em;
-  /* margin-left: 1em; */
+
   background-color: grey;
   border-top-right-radius: 18px;
   border-bottom-right-radius: 18px;
@@ -102,31 +102,41 @@
   margin-right: 35vw;
 }
 
-.todo-container {
+.wrap {
   display: flex;
+  background-color: #fff;
+  color: grey;
+
+  justify-content: space-between;
+}
+
+.todo-container {
   background-color: #fff;
   color: grey;
   margin: 1em;
   padding: 1.2em;
   font-size: 1.2em;
-  justify-content: space-between;
+
   border-radius: 10px;
   cursor: pointer;
-  outline: none;
-  align-items: center;
 }
 
 .todo-completed-container {
-  display: flex;
   background-color: rgb(217, 240, 183);
   opacity: 1;
   margin: 1em;
-  padding: 0.6em;
-  justify-content: space-between;
+  padding: 1em;
+
   border-radius: 10px;
   border: 1px solid green;
   cursor: pointer;
-  outline: none;
+}
+.wrapp {
+  display: flex;
+  background-color: rgb(217, 240, 183);
+
+  justify-content: space-between;
+
   align-items: center;
 }
 
@@ -169,6 +179,9 @@
 
 .todo-date {
   font-size: 14px;
+  margin-top: 1.7em;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* AUTHENTICATION */
@@ -179,12 +192,11 @@
   color: black;
   margin-top: 1em;
   margin-left: 28vw;
-  /* font-size: 6em; */
+
   text-decoration: none;
 }
 
 .link-btn {
-  /* background-color: b; */
   border: none;
   color: black;
   font-size: 1.3em;
