@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { User } from "../types/app.types";
+import { Link } from "react-router-dom";
 
 interface LoginProps {
   onLogin: (user: User) => void;
@@ -51,6 +52,9 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
           <button className="login-btn" type="submit">
             Login
           </button>
+        </div>
+        <div className="link">
+          <Link to="/SignUp">Sign Up</Link>
         </div>
       </form>
     </div>

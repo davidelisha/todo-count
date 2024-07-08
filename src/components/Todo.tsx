@@ -77,6 +77,11 @@ const Todo: React.FC<TodoProps> = () => {
   const countCompletedTodos = () =>
     todos.filter((todo) => todo.completed).length;
 
+  const currentDate = new Date().toLocaleDateString("en-EN", {
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <>
       <div className="count-todo-container"></div>
@@ -124,6 +129,7 @@ const Todo: React.FC<TodoProps> = () => {
                     <div className="updates">{todo.title}</div>
                   )}
                 </div>
+                {/* <div className="" */}
                 <div className="buttons">
                   <div onClick={() => handleEdit(todo.id)} className="btn-edit">
                     <FontAwesomeIcon icon={faPenToSquare} />
@@ -134,6 +140,7 @@ const Todo: React.FC<TodoProps> = () => {
                   >
                     <FontAwesomeIcon icon={faTrashCan} />
                   </div>
+                  <div className="todo-date">{currentDate}</div>
                 </div>
               </div>
             );

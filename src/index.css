@@ -167,7 +167,28 @@
   padding-left: 1em;
 }
 
+.todo-date {
+  font-size: 14px;
+}
+
 /* AUTHENTICATION */
+
+.link {
+  display: flex;
+  justify-content: center;
+  color: black;
+  margin-top: 1em;
+  margin-left: 28vw;
+  /* font-size: 6em; */
+  text-decoration: none;
+}
+
+.link-btn {
+  /* background-color: b; */
+  border: none;
+  color: black;
+  font-size: 1.3em;
+}
 
 /* Login */
 .login {
