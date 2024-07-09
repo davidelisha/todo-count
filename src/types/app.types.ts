@@ -2,6 +2,7 @@ export interface TodoItem {
   id: string;
   title: string;
   completed: boolean;
+  date: number | undefined;
 }
 
 export interface User {
