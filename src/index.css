@@ -184,6 +184,14 @@
   justify-content: flex-end;
 }
 
+.done {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-left: 37vw;
+  margin-top: 1.3em;
+  color: gray;
+}
+
 /* AUTHENTICATION */
 
 .link {

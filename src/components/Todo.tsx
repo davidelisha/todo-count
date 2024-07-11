@@ -102,6 +102,7 @@ const Todo: React.FC<TodoProps> = () => {
           <p>{countCompletedTodos()}</p>
         </div>
       </form>
+      <div className="done">Incompleted Todos</div>
       <ul className="list">
         {todos
           .filter((todo) => !todo.completed)
@@ -158,6 +159,7 @@ const Todo: React.FC<TodoProps> = () => {
             );
           })}
       </ul>
+      <div className="done">Completed Todos</div>
       <ul className="list">
         {todos
           .filter((todo) => todo.completed)
