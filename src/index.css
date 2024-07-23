@@ -192,6 +192,46 @@
   color: gray;
 }
 
+.modal-container {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #fff;
+  display: flex;
+  margin-left: 25vw;
+  margin-right: 25vw;
+  height: inherit;
+  border-radius: 25px;
+  flex-direction: column;
+}
+.close-modal {
+  font-size: 2.5em;
+  font-weight: 100;
+  /* font-family: monospace; */
+}
+.modal-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  font-weight: 100;
+}
+
+.title-text {
+  display: flex;
+  font-size: 2em;
+}
+
+.modal-font {
+  margin-right: 15px;
+}
+
 /* AUTHENTICATION */
 
 .link {
