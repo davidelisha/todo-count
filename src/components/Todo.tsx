@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { TodoItem } from "../types/app.types";
+import Modal from "./Modal";
 
 interface TodoProps {
   email: string;
@@ -13,6 +14,7 @@ const Todo: React.FC<TodoProps> = () => {
   const [editingTodoId, setEditingTodoId] = useState<string>();
   const [editingTodoText, setEditingTodoText] = useState("");
   const [email, setEmail] = useState("");
+  const [openedTodo, setIsOpenedTodo] = useState<TodoItem>();
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user")!);
@@ -84,7 +86,6 @@ const Todo: React.FC<TodoProps> = () => {
 
   return (
     <>
-      <div className="count-todo-container"></div>
       <form onSubmit={handleSubmit} className="new-item">
         <div className="form-row">
           <input
@@ -108,7 +109,11 @@ const Todo: React.FC<TodoProps> = () => {
           .filter((todo) => !todo.completed)
           .map((todo) => {
             return (
-              <div className="todo-container" key={todo.id}>
+              <div
+                onClick={() => setIsOpenedTodo(todo)}
+                className="todo-container"
+                key={todo.id}
+              >
                 <div className="wrap">
                   <div className="todo">
                     <input
@@ -131,7 +136,6 @@ const Todo: React.FC<TodoProps> = () => {
                       <div className="updates">{todo.title}</div>
                     )}
                   </div>
-                  {/* <div className="" */}
                   <div className="buttons">
                     <div
                       onClick={() => handleEdit(todo.id)}
@@ -197,6 +201,15 @@ const Todo: React.FC<TodoProps> = () => {
             );
           })}
       </ul>
+
+      {openedTodo && (
+        <Modal
+          onClose={() => setIsOpenedTodo(undefined)}
+          title={todos.find((todo) => todo.id === openedTodo.id)!.title}
+        >
+          <p>Hello World</p>
+        </Modal>
+      )}
     </>
   );
 };
