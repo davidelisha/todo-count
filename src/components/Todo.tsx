@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { TodoItem } from "../types/app.types";
 import Modal from "./Modal";
+import TodoDetails from "./TodoDetails";
+import { TodoPriority } from "./TodoPriority";
 
 interface TodoProps {
   email: string;
@@ -133,7 +135,14 @@ const Todo: React.FC<TodoProps> = () => {
                         }
                       />
                     ) : (
-                      <div className="updates">{todo.title}</div>
+                      <div className="updates">
+                        {todo.title}
+                        <p className="todo-description">
+                          {todo.description ?? "n/a"}
+                        </p>
+
+                        <TodoPriority priority={todo.priority ?? "n/a"} />
+                      </div>
                     )}
                   </div>
                   <div className="buttons">
@@ -207,7 +216,24 @@ const Todo: React.FC<TodoProps> = () => {
           onClose={() => setIsOpenedTodo(undefined)}
           title={todos.find((todo) => todo.id === openedTodo.id)!.title}
         >
-          <p>Hello World</p>
+          <TodoDetails
+            onSave={(descriptionText, deadline, priority) => {
+              setTodos(
+                todos.map((todo) =>
+                  todo.id === openedTodo.id
+                    ? {
+                        ...todo,
+                        description: descriptionText,
+                        deadline,
+                        priority,
+                      }
+                    : todo
+                )
+              );
+              setIsOpenedTodo(undefined);
+            }}
+            todo={openedTodo}
+          />
         </Modal>
       )}
     </>
