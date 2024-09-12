@@ -9,13 +9,14 @@ interface TodoPriorityProps {
 const priorityColor = (priority: Priority) => {
   if (priority === "High") {
     return "red";
-  } else if (priority === "Medium") {
-    return "yellow";
-  } else if (priority === "Low") {
-    return "green";
-  } else if (priority === "n/a") {
-    return "gray";
   }
+  if (priority === "Medium") {
+    return "yellow";
+  }
+  if (priority === "Low") {
+    return "green";
+  }
+  return "gray";
 };
 
 export const TodoPriority: React.FC<TodoPriorityProps> = ({
