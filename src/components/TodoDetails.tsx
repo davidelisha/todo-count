@@ -3,15 +3,11 @@ import { Priority, TodoItem } from "../types/app.types";
 import { TodoPriority } from "./TodoPriority";
 
 interface TodoDetailsProps {
-  onSave: (
-    descriptionText: string,
-    deadline: string,
-    priority: Priority
-  ) => void;
+  onSave: (description: string, deadline: string, priority: Priority) => void;
   todo: TodoItem;
 }
 
-const TodoDetails: React.FC<TodoDetailsProps> = ({ onSave, todo }) => {
+export const TodoDetails: React.FC<TodoDetailsProps> = ({ onSave, todo }) => {
   const [descriptionText, setDescriptionText] = useState(
     todo.description ?? ""
   );
@@ -87,5 +83,3 @@ const TodoDetails: React.FC<TodoDetailsProps> = ({ onSave, todo }) => {
     </form>
   );
 };
-
-export default TodoDetails;

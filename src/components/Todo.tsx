@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { TodoItem } from "../types/app.types";
 import Modal from "./Modal";
-import TodoDetails from "./TodoDetails";
+import { TodoDetails } from "./TodoDetails";
 import { TodoPriority } from "./TodoPriority";
 
 interface TodoProps {
