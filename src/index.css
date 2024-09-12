@@ -71,7 +71,6 @@
   border: 0;
   border-top-left-radius: 18px;
   border-bottom-left-radius: 18px;
-  /* color: grey; */
 }
 
 .new-item {
@@ -104,19 +103,14 @@
 
 .wrap {
   display: flex;
-  /* background-color: #fff; */
-  /* color: grey; */
-
   justify-content: space-between;
 }
 
 .todo-container {
   background-color: #fff;
-  /* color: grey; */
   margin: 1em;
   padding: 1.2em;
   font-size: 1.2em;
-
   border-radius: 10px;
   cursor: pointer;
 }
@@ -126,7 +120,6 @@
   opacity: 1;
   margin: 1em;
   padding: 1em;
-
   border-radius: 10px;
   border: 1px solid green;
   cursor: pointer;
@@ -134,9 +127,7 @@
 .wrapp {
   display: flex;
   background-color: rgb(217, 240, 183);
-
   justify-content: space-between;
-
   align-items: center;
 }
 
@@ -207,7 +198,6 @@
   display: flex;
   margin-left: 25vw;
   margin-right: 25vw;
-
   border-radius: 25px;
   flex-direction: column;
   padding: 30px;
@@ -215,13 +205,11 @@
 .close-modal {
   font-size: 2.5em;
   font-weight: 100;
-  /* font-family: monospace; */
 }
 .modal-title {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
-
   font-weight: 100;
 }
 
@@ -265,7 +253,6 @@
 
 .priority-label {
   background-color: grey;
-  /* color: aqua; */
 }
 
 .todo-description {
@@ -275,20 +262,10 @@
   font-size: 17px;
 }
 
-.todo-priority {
-  /* color: red; */
-  /* background-color: #ddd;
-  border: none;
-  padding: 7px;
-  border-radius: 7px;
-  margin-top: 20px; */
-}
-
 /* Drop Down Priority Button */
 
 .dropdown {
   position: relative;
-  /* display: inline-block; */
 }
 
 .dropdown-btn {
@@ -343,7 +320,6 @@
   color: black;
   margin-top: 1em;
   margin-left: 28vw;
-
   text-decoration: none;
 }
 
