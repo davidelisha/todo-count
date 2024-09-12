@@ -217,7 +217,7 @@ const Todo: React.FC<TodoProps> = () => {
           title={todos.find((todo) => todo.id === openedTodo.id)!.title}
         >
           <TodoDetails
-            onSave={(descriptionText, deadline, priority) => {
+            onSave={(description, deadline, priority) => {
               setTodos(
                 todos.map((todo) =>
                   todo.id === openedTodo.id
