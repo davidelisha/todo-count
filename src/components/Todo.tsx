@@ -223,7 +223,7 @@ const Todo: React.FC<TodoProps> = () => {
                   todo.id === openedTodo.id
                     ? {
                         ...todo,
-                        description: descriptionText,
+                        description,
                         deadline,
                         priority,
                       }
