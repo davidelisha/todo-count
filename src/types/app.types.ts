@@ -4,9 +4,9 @@ export interface TodoItem {
   title: string;
   completed: boolean;
   date: number | undefined;
-  description?: string | undefined;
-  deadline?: string | undefined;
-  priority?: Priority | undefined;
+  description?: string;
+  deadline?: string;
+  priority?: Priority;
 }
 
 export interface User {
