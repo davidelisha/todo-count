@@ -10,7 +10,6 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ children, onClose, title }) => {
   return (
-    // <div className="modal-container">
     <div className="modal-container">
       <div className="modal">
         <div className="modal-title">
